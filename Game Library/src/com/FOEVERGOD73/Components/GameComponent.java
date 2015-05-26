@@ -1,9 +1,9 @@
-package com.GameEngine.Components;
+package com.FOEVERGOD73.Components;
 
 import java.awt.Graphics;
 
-import com.GameEngine.Core.Nameable;
-import com.GameEngine.Objects.GameObject;
+import com.FOEVERGOD73.Core.Nameable;
+import com.FOEVERGOD73.Objects.GameObject;
 
 public abstract class GameComponent extends Nameable{
 	protected GameObject parent;

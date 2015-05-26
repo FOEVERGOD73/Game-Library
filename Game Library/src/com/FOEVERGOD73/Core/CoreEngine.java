@@ -1,10 +1,10 @@
-package com.GameEngine.Core;
+package com.FOEVERGOD73.Core;
 
 import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
-import com.GameEngine.Util.FrameInfo;
+import com.FOEVERGOD73.Util.FrameInfo;
 
 public class CoreEngine extends Canvas implements Runnable  {
 

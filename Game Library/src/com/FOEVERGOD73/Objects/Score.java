@@ -1,11 +1,11 @@
-package com.GameEngine.Objects;
+package com.FOEVERGOD73.Objects;
 
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
 
-import com.GameEngine.Core.SpriteSheet;
+import com.FOEVERGOD73.Core.SpriteSheet;
 
 public class Score extends GameObject {
 	SpriteSheet ss;

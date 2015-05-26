@@ -1,4 +1,4 @@
-package com.GameEngine.Core;
+package com.FOEVERGOD73.Core;
 
 public class Random extends java.util.Random{
 

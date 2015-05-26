@@ -1,10 +1,10 @@
-package com.GameEngine.Objects;
+package com.FOEVERGOD73.Objects;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
-import com.GameEngine.Components.Clickable;
-import com.GameEngine.Core.Input;
+import com.FOEVERGOD73.Components.Clickable;
+import com.FOEVERGOD73.Core.Input;
 
 public class Button extends GameObject{
 	public int x, y, width, height, mouseCode;

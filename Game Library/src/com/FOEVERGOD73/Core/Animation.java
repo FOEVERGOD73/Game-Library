@@ -1,9 +1,9 @@
-package com.GameEngine.Core;
+package com.FOEVERGOD73.Core;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
-import com.GameEngine.Objects.GameObject;
+import com.FOEVERGOD73.Objects.GameObject;
 
 public class Animation {
 	private int speed;

@@ -1,4 +1,4 @@
-package com.GameEngine.Objects;
+package com.FOEVERGOD73.Objects;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

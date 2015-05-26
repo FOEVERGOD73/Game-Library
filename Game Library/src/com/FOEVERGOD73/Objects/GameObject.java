@@ -1,12 +1,12 @@
-package com.GameEngine.Objects;
+package com.FOEVERGOD73.Objects;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.ConcurrentModificationException;
 import java.util.LinkedList;
 
-import com.GameEngine.Components.GameComponent;
-import com.GameEngine.Core.Nameable;
+import com.FOEVERGOD73.Components.GameComponent;
+import com.FOEVERGOD73.Core.Nameable;
 
 public class GameObject extends Nameable {
 	protected double x, y, width, height;

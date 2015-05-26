@@ -1,8 +1,8 @@
-package com.GameEngine.Core;
+package com.FOEVERGOD73.Core;
 
 import java.awt.image.BufferedImage;
 
-import com.GameEngine.Util.BufferedImageLoader;
+import com.FOEVERGOD73.Util.BufferedImageLoader;
 
 public class SpriteSheet {
 

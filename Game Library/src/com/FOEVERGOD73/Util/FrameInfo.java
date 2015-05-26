@@ -1,4 +1,4 @@
-package com.GameEngine.Util;
+package com.FOEVERGOD73.Util;
 
 public class FrameInfo {
 	public int width, height;

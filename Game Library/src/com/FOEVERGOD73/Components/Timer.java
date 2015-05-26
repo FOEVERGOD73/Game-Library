@@ -1,4 +1,4 @@
-package com.GameEngine.Components;
+package com.FOEVERGOD73.Components;
 
 public class Timer extends GameComponent{
 	private float time, countDown;

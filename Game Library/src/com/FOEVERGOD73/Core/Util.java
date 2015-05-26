@@ -1,4 +1,4 @@
-package com.GameEngine.Core;
+package com.FOEVERGOD73.Core;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;

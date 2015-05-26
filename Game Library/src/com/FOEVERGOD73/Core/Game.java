@@ -1,8 +1,8 @@
-package com.GameEngine.Core;
+package com.FOEVERGOD73.Core;
 
 import java.awt.Graphics;
 
-import com.GameEngine.Objects.GameObject;
+import com.FOEVERGOD73.Objects.GameObject;
 
 public abstract class Game {
 	private GameObject rootObject;
