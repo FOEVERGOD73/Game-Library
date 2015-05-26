@@ -12,18 +12,20 @@ public abstract class Game {
 	}
 	
 	public abstract void init();
-	public abstract void tick();
-	public abstract void render(Graphics g);
-	public void renderForeground(Graphics g){}
+	public abstract void preTick();
+	public abstract void postTick();
+	public abstract void preRender(Graphics[] g);
+	public abstract void postRender(Graphics[] g);
 	
-	public void tickh(){
-		rootObject.tickh();
-		tick();
+	public void tick(){
+		preTick();
+		rootObject.tick();
+		postTick();
 	}
-	public void renderh(Graphics g){
-		render(g);
-		rootObject.renderh(g);
-		renderForeground(g);
+	public void render(Graphics[] g){
+		preRender(g);
+		rootObject.render(g);
+		postRender(g);
 	}
 
 	public GameObject getRootObject() {

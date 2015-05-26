@@ -7,13 +7,13 @@ import javax.swing.JFrame;
 public class Window {
 	private JFrame frame;
 
-		public Window(int w, int h, String title, boolean autostart, CoreEngine coreEngine){
-			coreEngine.setPreferredSize(new Dimension(w, h));
-			coreEngine.setMaximumSize(new Dimension(w, h));
-			coreEngine.setMinimumSize(new Dimension(w, h));
+		public Window(int w, int h, String title, boolean autostart, RenderEngine renderEngine, CoreEngine coreEngine){
+			renderEngine.setPreferredSize(new Dimension(w, h));
+			renderEngine.setMaximumSize(new Dimension(w, h));
+			renderEngine.setMinimumSize(new Dimension(w, h));
 			
 			frame = new JFrame(title);
-			frame.add(coreEngine);
+			frame.add(renderEngine);
 			frame.pack();
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.setResizable(false);

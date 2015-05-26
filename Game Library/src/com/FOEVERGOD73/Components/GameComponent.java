@@ -13,7 +13,7 @@ public abstract class GameComponent extends Nameable{
 	}
 
 	public abstract void tick();
-	public void render(Graphics g){}
+	public void render(Graphics[] g){}
 	
 	
 	public GameObject getParent() {

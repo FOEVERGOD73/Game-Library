@@ -1,34 +1,34 @@
 package com.FOEVERGOD73.Core;
 
-import java.awt.Canvas;
-import java.awt.Graphics;
-import java.awt.image.BufferStrategy;
-
 import com.FOEVERGOD73.Util.FrameInfo;
 
-public class CoreEngine extends Canvas implements Runnable  {
-
-	private static final long serialVersionUID = 1L;
+public class CoreEngine implements Runnable  {
 	
 	private boolean running = false;
 	
 	private Game game;
-	private BufferStrategy bufferStrategy;
 	private Thread thread;
 	private FPS fps;
 	private Window window;
 	public static int WIDTH, HEIGHT;
 	public static int multiplier;
+	private RenderEngine renderEngine;
+	private TickEngine tickEngine;
+	private int layers;
 	
-	public CoreEngine(FrameInfo info, String name, int multiplier, Game game){	
-		WIDTH = info.width * multiplier;
-		HEIGHT = info.height * multiplier;
+	public CoreEngine(FrameInfo info, String name, int multiplier, Game game, int layers){	
+		WIDTH = info.width;
+		HEIGHT = info.height;
 		CoreEngine.multiplier = multiplier;
-		setWindow(new Window(info.width * multiplier, info.height * multiplier, name, info.autostart, this));
 		
 		this.setGame(game);
+		this.layers = layers;
 		
 		fps = new FPS();
+		
+		renderEngine = new RenderEngine(this.layers, game);
+		tickEngine = new TickEngine(game);
+		setWindow(new Window(info.width, info.height, name, info.autostart, renderEngine, this));
 	}
 
 	public synchronized void start(){
@@ -37,6 +37,8 @@ public class CoreEngine extends Canvas implements Runnable  {
 		running = true;
 		thread = new Thread(this);
 		thread.start();
+		renderEngine.start();
+		tickEngine.start();
 	}
 	
 	public synchronized void stop() throws InterruptedException{
@@ -48,7 +50,6 @@ public class CoreEngine extends Canvas implements Runnable  {
 	
 	public void run() {
 		init();
-		this.requestFocus();
 		long lastTime = System.nanoTime();
 		double amountOfTicks = 60.0;
 		double ns = 1000000000 / amountOfTicks;
@@ -61,8 +62,7 @@ public class CoreEngine extends Canvas implements Runnable  {
 			delta += (now - lastTime) / ns;
 			lastTime = now;
 			while (delta >= 1) {
-				getGame().tickh();
-				Input.getInstance().tick();
+				tick();
 				render();
 				updates++;
 				delta--;
@@ -80,24 +80,16 @@ public class CoreEngine extends Canvas implements Runnable  {
 	
 	private void init(){
 		Input.window = window;
-		addMouseListener(Input.getInstance());
-		addKeyListener(Input.getInstance());
 		game.init();
 	}
 	
-	private void render(){
-		bufferStrategy = this.getBufferStrategy();
-		if (bufferStrategy == null) {
-			this.createBufferStrategy(3);
-			return;
-		}
+	private void tick(){
+		Semaphores.tickFrames.release();
 
-		Graphics g = bufferStrategy.getDrawGraphics();
-		// //////////////////////////////////////////////////////////////////
-		getGame().renderh(g);
-		// //////////////////////////////////////////////////////////////////
-		g.dispose();
-		bufferStrategy.show();
+	}
+	
+	private void render(){
+		Semaphores.renderFrames.release();
 	}
 
 	public FPS getFps() {
