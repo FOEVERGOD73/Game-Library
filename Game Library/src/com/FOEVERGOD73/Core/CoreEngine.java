@@ -1,6 +1,5 @@
 package com.FOEVERGOD73.Core;
 
-import com.FOEVERGOD73.Util.FrameInfo;
 
 public class CoreEngine implements Runnable  {
 	
@@ -8,7 +7,7 @@ public class CoreEngine implements Runnable  {
 	
 	private Game game;
 	private Thread thread;
-	private FPS fps;
+	public int frames = 0, updates = 0;
 	private Window window;
 	public static int WIDTH, HEIGHT;
 	public static int multiplier;
@@ -16,19 +15,17 @@ public class CoreEngine implements Runnable  {
 	private TickEngine tickEngine;
 	private int layers;
 	
-	public CoreEngine(FrameInfo info, String name, int multiplier, Game game, int layers){	
-		WIDTH = info.width;
-		HEIGHT = info.height;
+	public CoreEngine(int width, int height, boolean autostart, String name, int multiplier, Game game, int layers){	
+		WIDTH = width;
+		HEIGHT = height;
 		CoreEngine.multiplier = multiplier;
 		
 		this.setGame(game);
 		this.layers = layers;
-		
-		fps = new FPS();
-		
+				
 		renderEngine = new RenderEngine(this.layers, game);
 		tickEngine = new TickEngine(game);
-		setWindow(new Window(info.width, info.height, name, info.autostart, renderEngine, this));
+		setWindow(new Window(width, height, name, autostart, renderEngine, this));
 	}
 
 	public synchronized void start(){
@@ -71,7 +68,9 @@ public class CoreEngine implements Runnable  {
 
 			if (System.currentTimeMillis() - timer > 1000) {
 				timer += 1000;
-				getFps().set(updates, frames);
+				this.frames = frames;
+				this.updates = updates;
+				System.out.println("Frames: " + frames + ", Updates: " + updates);
 				frames = 0;
 				updates = 0;
 			}
@@ -85,19 +84,10 @@ public class CoreEngine implements Runnable  {
 	
 	private void tick(){
 		Semaphores.tickFrames.release();
-
 	}
 	
 	private void render(){
 		Semaphores.renderFrames.release();
-	}
-
-	public FPS getFps() {
-		return fps;
-	}
-
-	public void setFps(FPS fps) {
-		this.fps = fps;
 	}
 
 	public Window getWindow() {
