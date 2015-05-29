@@ -1,4 +1,8 @@
-package com.FOEVERGOD73.Core;
+package com.FOEVERGOD73.Core.Base;
+
+import com.FOEVERGOD73.Core.Render.RenderEngine;
+import com.FOEVERGOD73.Core.Tick.TickEngine;
+import com.FOEVERGOD73.Util.Input;
 
 
 public class CoreEngine implements Runnable  {

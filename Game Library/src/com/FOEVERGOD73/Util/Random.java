@@ -1,4 +1,4 @@
-package com.FOEVERGOD73.Core;
+package com.FOEVERGOD73.Util;
 
 public class Random extends java.util.Random{
 

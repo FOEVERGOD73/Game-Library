@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 import com.FOEVERGOD73.Components.Clickable;
-import com.FOEVERGOD73.Core.Input;
+import com.FOEVERGOD73.Util.Input;
 
 public class Grid extends GameObject{
 	public int x, y;

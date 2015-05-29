@@ -1,6 +1,6 @@
 package com.FOEVERGOD73.Components;
 
-import com.FOEVERGOD73.Core.Input;
+import com.FOEVERGOD73.Util.Input;
 
 public class Clickable extends GameComponent {
 	

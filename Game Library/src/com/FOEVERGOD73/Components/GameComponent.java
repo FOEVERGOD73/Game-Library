@@ -2,7 +2,7 @@ package com.FOEVERGOD73.Components;
 
 import java.awt.Graphics;
 
-import com.FOEVERGOD73.Core.Nameable;
+import com.FOEVERGOD73.Interface.Nameable;
 import com.FOEVERGOD73.Objects.GameObject;
 
 public abstract class GameComponent extends Nameable{

@@ -5,7 +5,7 @@ import java.awt.Point;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
 
-import com.FOEVERGOD73.Core.SpriteSheet;
+import com.FOEVERGOD73.Core.Render.SpriteSheet;
 
 public class Score extends GameObject {
 	SpriteSheet ss;

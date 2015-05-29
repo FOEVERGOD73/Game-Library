@@ -1,8 +1,9 @@
-package com.FOEVERGOD73.Core;
+package com.FOEVERGOD73.Core.Render;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+import com.FOEVERGOD73.Core.Base.CoreEngine;
 import com.FOEVERGOD73.Objects.GameObject;
 
 public class Animation {

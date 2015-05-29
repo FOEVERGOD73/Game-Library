@@ -6,7 +6,7 @@ import java.util.ConcurrentModificationException;
 import java.util.LinkedList;
 
 import com.FOEVERGOD73.Components.GameComponent;
-import com.FOEVERGOD73.Core.Nameable;
+import com.FOEVERGOD73.Interface.Nameable;
 
 public class GameObject extends Nameable {
 	protected double x, y, width, height;

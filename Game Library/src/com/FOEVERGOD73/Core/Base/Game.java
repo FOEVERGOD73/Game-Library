@@ -1,4 +1,4 @@
-package com.FOEVERGOD73.Core;
+package com.FOEVERGOD73.Core.Base;
 
 import java.awt.Graphics;
 

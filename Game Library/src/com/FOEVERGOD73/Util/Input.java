@@ -1,4 +1,4 @@
-package com.FOEVERGOD73.Core;
+package com.FOEVERGOD73.Util;
 
 import java.awt.AWTException;
 import java.awt.Point;
@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import com.FOEVERGOD73.Core.Base.Window;
 import com.FOEVERGOD73.Objects.GameObject;
 
 public class Input extends KeyAdapter implements MouseListener {

@@ -5,9 +5,6 @@ package com.FOEVERGOD73.Util;
  * fraction is negative, the numerator will always be negative. All operators
  * leave results stored in lowest terms.
  *
- * Class is not complete, only addition operation is implemented.
- *
- * @author Carol Zander
  */
 
 public class Fraction {

@@ -1,8 +1,10 @@
-package com.FOEVERGOD73.Core;
+package com.FOEVERGOD73.Core.Base;
 
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
+
+import com.FOEVERGOD73.Core.Render.RenderEngine;
 
 public class Window {
 	private JFrame frame;

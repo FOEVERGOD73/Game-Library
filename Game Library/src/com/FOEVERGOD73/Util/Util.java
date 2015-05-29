@@ -1,4 +1,4 @@
-package com.FOEVERGOD73.Core;
+package com.FOEVERGOD73.Util;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
